@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
-
+// Turns out I was getting the Fibonacci Sequence mixed up with something else.
+// After the call and I googled it (which I should of done on the side during the call to confirm) I almost fell through the floor
+// with how off I was!!!
 
 function fibThing(userNum){
   if(!isNaN(userNum)){
@@ -13,13 +14,11 @@ function fibThing(userNum){
     var endString='1,';
     for(var i=0;i<userNum;i++){
         z=x+y;
-        console.log(x+' + '+y+' = '+z);
         x=y;
         y=z;
         endString=endString+z+',';
     }
     endString=endString.substr(0,endString.length-1);
-    console.log(endString);
     return(endString);
   }else{
     return 'Not a number'
@@ -31,7 +30,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {value: '',value2:''};
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
